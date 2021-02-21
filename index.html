@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cosd19-myDashboard</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+    <link rel="manifest" href="manifest.json">
+    <script src="alleOrte.js"></script>
+  </head>
+  <body>
+      <div class="navbar">
+        <!-- <span class="navbarleft" id="navbarleft"><img src="icons/back-36.png"></span> -->
+        <span class="navbarmiddle" id="navbarlmiddle">Covid19-myDashboard</span>
+        <span class="navbarright" id="navbarright"><img src="icons/menu-36.png"></span>
+
+      </div>
+    
+    <div class="main">
+      <section class="output">
+        <table>
+          <thead>
+            <tr><th>Ort</th><th>Alle Fälle</th><th>neue Fälle</th><th>alle Tote</th><th>neue Tote</th><th>Inzi7</th><th>&nbsp;</th></th></tr>
+          </thead>
+          <tbody></tbody>
+
+        </table>
+      </section>
+      <section class="input">
+        <input type="text" id="tf1" value="" placeholder="" list="dataList"><button id="btnAddLocation">add</button><button id="btnRemoveLocation">remove</button>
+        <datalist id="dataList"></datalist>
+        </section>
+      </section>
+
+
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>

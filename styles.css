@@ -1,0 +1,33 @@
+body {
+    background-color: #FF9800;
+    color: black;
+    font-family: sans-serif;
+    padding: 0pt;
+    font-size: 10pt;
+  }
+  
+  .navbar{
+      display: flex;
+      justify-content : space-between;
+      background-color: bisque;
+      margin: 0pt;
+      padding:4pt;
+  }
+  .navbarmiddle{
+      font-size: 14pt;
+      font-weight: bold;
+      margin-top: 4pt;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  
+  td, th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: left;
+  }
+  .output{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
