@@ -7,13 +7,21 @@
 
 //-----------------------------------------------------
 
-
+const tabelBody = document.getElementById("tableBody");
 const dataList = document.getElementById("dataList");
 alleOrte.forEach(element=>{
   dataList.innerHTML += `<option id="${element.attributes.AdmUnitId}" value="${element.attributes.county}--${element.attributes.AdmUnitId}" \>`;
 })
-let myLocations = localStorage.getItem('myLocations');
-myLocations = JSON.parse(myLocations);
+let myLocations = [];
+
+function init(){
+  if(localStorage.getItem('myLocations')){
+    myLocations = localStorage.getItem('myLocations');
+    myLocations = JSON.parse(myLocations);
+  }
+  tabelBody.innerHTML="";
+  drawTable();
+}
 
 const btnRemoveLocation = document.getElementById("btnRemoveLocation");
 btnRemoveLocation.addEventListener('click', function(){
@@ -29,19 +37,30 @@ btnAddLocation.addEventListener('click',function(){
     tf1.value="";
   }
 })
+init();
+function drawTable(){
+  myLocations.forEach(function(element){
+    //getDatafromRKI(AdminUnitId)
+    let tr = document.createElement("tr");
+    tr.innerHTML = `<tr>${element.AdmUnitId} -- ${element.county}</tr>`;
+    tableBody.appendChild(tr);
+  })
+}
 
 function addNewLocation(AdmUnitId, county){
   //insert new location
   let location = new Object;
   location.AdmUnitId = AdmUnitId;
   location.county = county;
+  console.log(location);
   myLocations.push(location);
   console.log(myLocations);
   localStorage.setItem('myLocations', JSON.stringify(myLocations));
-
+  init();
 }
 
 function removeLocation(index){
   myLocations.splice(index, 1);
   localStorage.setItem('myLocations', JSON.stringify(myLocations));
+  init();
 }
