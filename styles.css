@@ -5,7 +5,9 @@ body {
     padding: 0pt;
     font-size: 10pt;
   }
-  
+  .input{
+    margin-top: 16px;
+  }
   .navbar{
       display: flex;
       justify-content : space-between;
