@@ -65,10 +65,10 @@ function drawTable(data){
     let tr = document.createElement("tr");
     tr.innerHTML = `<tr>
     <td>${placeName}</td>
-    <td> ${ea.AnzFall}</td>
+    <td>${ea.AnzFall}</td>
     <td>${ea.AnzFallNeu}</td>
-    <td>${ea.AnzFallNeu}</td>
-    <td>${ea.AnzFallNeu}</td>
+    <td>${ea.AnzTodesfall}</td>
+    <td>${ea.AnzTodesfallNeu}</td>
     <td>${ea.Inz7T}</td>
     <td><button onClick="removeLocation(${ea.AdmUnitId})">X</button>
     </tr>`;
