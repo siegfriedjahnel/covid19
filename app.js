@@ -10,7 +10,8 @@
 const tabelBody = document.getElementById("tableBody");
 const dataList = document.getElementById("dataList");
 const btnAddLocation = document.getElementById("btnAddLocation");
-
+const statusBar = document.getElementById("statusBar");
+const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 alleOrte.forEach(element=>{
   dataList.innerHTML += `<option id="${element.attributes.AdmUnitId}" value="${element.attributes.county}--${element.attributes.AdmUnitId}" \>`;
@@ -31,6 +32,10 @@ async function getDatafromRKI(){
   const response = await fetch(uri);
   const json = await response.json();
   const data = await json.features;
+  let lastUpdate = response.headers.get("last-modified");
+  lastUpdate = new Date(lastUpdate);
+  lastUpdate = lastUpdate.toLocaleDateString('de-DE', dateOptions);
+  statusBar.innerHTML=`Stand: ${lastUpdate}`;
   return data;//data = array of results
 }
 
@@ -62,15 +67,17 @@ function drawTable(data){
   data.forEach(function(element){
     let ea = element.attributes;
     let placeName = getCountyByAdmUniId(ea.AdmUnitId);
+    let trend;
+    if(ea.AnzAktivNeu ==0) trend = "&#8594;";
+    if(ea.AnzAktivNeu <0) trend = "&#8600;";
+    if(ea.AnzAktivNeu >0) trend = "&#8599;";
     let tr = document.createElement("tr");
     tr.innerHTML = `<tr>
     <td>${placeName}</td>
-    <td>${ea.AnzFall}</td>
-    <td>${ea.AnzFallNeu}</td>
-    <td>${ea.AnzTodesfall}</td>
-    <td>${ea.AnzTodesfallNeu}</td>
-    <td>${ea.Inz7T}</td>
-    <td><button onClick="removeLocation(${ea.AdmUnitId})">X</button>
+    <td>${ea.AnzFall}<br>(${ea.AnzFallNeu})</td>
+    <td>${ea.AnzTodesfall}<br>(${ea.AnzTodesfallNeu})</td>
+    <td>${ea.Inz7T}<br>${trend}</td>
+    <td><button onClick="removeLocation(${ea.AdmUnitId})">x</button>
     </tr>`;
     tableBody.appendChild(tr);
   })

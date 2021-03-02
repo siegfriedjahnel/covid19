@@ -1,17 +1,50 @@
+:root {
+  --main-bg-color:#263238;
+  --main-bg-color-mod:#4f5b62;
+  --main-txt-color: #ffffff;
+  --sec-txt-color: #ffffff;
+  --sec-bg-color: #81d4fa;
+  --sec-bg-color-mod: #b6ffff;
+  --error-color: #B00020;
+  
+}
+#dataList{
+  max-height: 200px;
+  width: 100px;
+}
+#menu{
+  position: fixed;
+  width: 75%;
+  padding: 8px;
+  top: 48px;
+  right: 24px;
+  visibility: hidden;
+  background-color: var(--main-bg-color-mod);
+}
+li{
+  padding: 16px;
+}
 body {
-    background-color: #FF9800;
-    color: black;
+    background-color: var(--main-bg-color);
+    color: var(--main-txt-color);
     font-family: sans-serif;
     padding: 0pt;
     font-size: 10pt;
   }
   .input{
     margin-top: 16px;
+    margin-right: 16px;
+  }
+  .btnAdd{
+    margin-left: 8px;
+  }
+  button{
+    font-size: 16px;
   }
   .navbar{
       display: flex;
       justify-content : space-between;
-      background-color: bisque;
+      background-color: var(--main-bg-color-mod);
       margin: 0pt;
       padding:4pt;
   }
@@ -25,11 +58,20 @@ body {
   }
   
   td, th {
-    border: 1px solid #999;
+    border: 1px solid var(--main-bg-color-mod);
     padding: 0.5rem;
     text-align: left;
   }
   .output{
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+  input[type=text] {
+    
+    background-color:var(--main-bg-color-mod);
+    color: var(--main-txt-color);
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
   }

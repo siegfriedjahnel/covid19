@@ -1,39 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cosd19-myDashboard</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" media="all">
-    <link rel="manifest" href="manifest.json">
-    <script src="alleOrte.js"></script>
-  </head>
-  <body>
-      <div class="navbar">
-        <!-- <span class="navbarleft" id="navbarleft"><img src="icons/back-36.png"></span> -->
-        <span class="navbarmiddle" id="navbarlmiddle">Covid19-myDashboard</span>
-        <span class="navbarright" id="navbarright"><img src="icons/menu-36.png"></span>
 
-      </div>
-    
-    <div class="main">
-      <section class="input">
-        <input type="text" id="tf1" placeholder="Bundesland oder Landkreis" list="dataList"><button id="btnAddLocation">add</button>
-        <datalist id="dataList"></datalist>
-        </section>
-      </section>
-      <section class="output">
-        <table>
-          <thead>
-            <tr><th>Ort</th><th>Alle Fälle</th><th>neue Fälle</th><th>alle Tote</th><th>neue Tote</th><th>Inzi7</th><th>&nbsp;</th></th></tr>
-          </thead>
-          <tbody id="tableBody"></tbody>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cosd19-myDashboard</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+  <link rel="manifest" href="manifest.json">
+  <script src="alleOrte.js"></script>
+</head>
 
-        </table>
-      </section>
+<body>
+  <div class="navbar">
+    <!-- <span class="navbarleft" id="navbarleft"><img src="icons/back-36.png"></span> -->
+    <span class="navbarmiddle" id="navbarlmiddle">MyCovid19Dashboard</span>
+    <span class="navbarright" id="btnToggleMenu"><img src="icons/menu-36.png"></span>
+
+  </div>
+  <div id="menu"  class="menu">
+    <span id="btnCloseMenu">X</span>
+    <ul>
+      <li>App teilen mit WhatsApp</li>
+      <li>App teilen mit QR-Code</li>
+      <li>Infos zur App</li>
+    </ul>
+  </div>
+  <div class="main">
+    <section class="input">
+      <input type="text" id="tf1" placeholder="Bundesland oder Landkreis" list="dataList"><button class="btnAdd"
+        id="btnAddLocation">+</button>
+      <datalist id="dataList"></datalist>
+    </section>
+    <section>
+      <div id="statusBar"></div>
+    </section>
+    <section class="output">
+      <table>
+        <thead>
+          <tr>
+            <th>Ort</th>
+            <th>Fälle (neue)</th>
+            <th>Tote (neue)</th>
+            <th>Inzi7 (trend)</th>
+            <th>&nbsp;</th>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+
+      </table>
+    </section>
 
 
-    </div>
-  </body>
-  <script src="app.js"></script>
+  </div>
+</body>
+<script src="index.js"></script>
+<script src="app.js"></script>
+
 </html>
