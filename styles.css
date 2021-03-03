@@ -2,31 +2,46 @@
   --main-bg-color:#263238;
   --main-bg-color-mod:#4f5b62;
   --main-txt-color: #ffffff;
-  --sec-txt-color: #ffffff;
+  --sec-txt-color:black;
   --sec-bg-color: #81d4fa;
   --sec-bg-color-mod: #b6ffff;
   --error-color: #B00020;
+
+  --primary: #bdbdbd;
+  --primary-light:#efefef;
+  --primary-dark: #8d8d8d;
+  --text: black;
+
   
 }
 #dataList{
   max-height: 200px;
   width: 100px;
 }
+#btnCloseMenu{
+  padding: 8px;
+  
+}
 #menu{
   position: fixed;
   width: 75%;
   padding: 8px;
-  top: 48px;
+  top: 64px;
   right: 24px;
   visibility: hidden;
-  background-color: var(--main-bg-color-mod);
+  background-color: var(--primary-dark);
+  color: var(--text);
+}
+#menuhead{
+  text-align: right;
+  background-color:var(--primary-light);
 }
 li{
   padding: 16px;
 }
 body {
-    background-color: var(--main-bg-color);
-    color: var(--main-txt-color);
+    background-color: var(--primary);
+    color: var(--text);
     font-family: sans-serif;
     padding: 0pt;
     font-size: 10pt;
@@ -44,7 +59,7 @@ body {
   .navbar{
       display: flex;
       justify-content : space-between;
-      background-color: var(--main-bg-color-mod);
+      background-color: var(--primary-dark);
       margin: 0pt;
       padding:4pt;
   }
@@ -55,10 +70,11 @@ body {
   }
   table {
     border-collapse: collapse;
+    background-color: var(--primary-light);
   }
   
   td, th {
-    border: 1px solid var(--main-bg-color-mod);
+    border: 1px solid var(--primary-dark);
     padding: 0.5rem;
     text-align: left;
   }
@@ -68,8 +84,8 @@ body {
   }
   input[type=text] {
     
-    background-color:var(--main-bg-color-mod);
-    color: var(--main-txt-color);
+    background-color:var(--primary-light);
+    color: var(--text);
     width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
