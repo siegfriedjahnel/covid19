@@ -1,16 +1,11 @@
-/* if('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
-      .then(function() {
-            console.log('Service Worker Registered');
-      });
-  } */
 
 //-----------------------------------------------------
 
-const tabelBody = document.getElementById("tableBody");
+const tableBody = document.getElementById("tableBody");
 const dataList = document.getElementById("dataList");
 const btnAddLocation = document.getElementById("btnAddLocation");
 const statusBar = document.getElementById("statusBar");
+const infoBox = document.getElementById("infoBox");
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 alleOrte.forEach(element=>{
@@ -27,7 +22,6 @@ async function getDatafromRKI(){
     query = query + "AdmUnitId="+element.AdmUnitId + " OR ";
   })
   query = query.substring(0, query.length-4);//remove the last OR
-  console.log(query);
   let uri = `https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/rki_key_data_v/FeatureServer/0/query?f=json&where=(${query})&outFields=*`;
   const response = await fetch(uri);
   const json = await response.json();
@@ -43,6 +37,15 @@ function init(){
   if(localStorage.getItem('myLocations')){
     myLocations = localStorage.getItem('myLocations');
     myLocations = JSON.parse(myLocations);
+    let numEntries = myLocations.length;
+    if(numEntries == 0){
+      infoBox.style.visibility = "visible";
+    }else{
+      infoBox.style.visibility = "hidden"
+    }
+  }else{
+    infoBox.style.visibility = "visible";
+    
   }
   tableBody.innerHTML="";
   getDatafromRKI()
@@ -74,9 +77,9 @@ function drawTable(data){
     let tr = document.createElement("tr");
     tr.innerHTML = `<tr>
     <td>${placeName}</td>
-    <td>${ea.AnzFall}<br>(${ea.AnzFallNeu})</td>
+    <td>${ea.AnzFall}<br>(${ea.AnzFallNeu}${trend})</td>
     <td>${ea.AnzTodesfall}<br>(${ea.AnzTodesfallNeu})</td>
-    <td>${ea.Inz7T}<br>${trend}</td>
+    <td>${ea.Inz7T}</td>
     <td><button onClick="removeLocation(${ea.AdmUnitId})">x</button>
     </tr>`;
     tableBody.appendChild(tr);

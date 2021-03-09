@@ -1,27 +1,25 @@
 :root {
-  --main-bg-color:#263238;
-  --main-bg-color-mod:#4f5b62;
-  --main-txt-color: #ffffff;
-  --sec-txt-color:black;
-  --sec-bg-color: #81d4fa;
-  --sec-bg-color-mod: #b6ffff;
+  
   --error-color: #B00020;
 
   --primary: #bdbdbd;
   --primary-light:#efefef;
   --primary-dark: #8d8d8d;
   --text: black;
-
-  
+}
+img{
+  margin:auto;
 }
 #dataList{
   max-height: 200px;
   width: 100px;
 }
-#btnCloseMenu{
-  padding: 8px;
-  
+.btnClose{
+  margin: 4px;
+  margin-left: auto;
 }
+
+
 #menu{
   position: fixed;
   width: 75%;
@@ -35,6 +33,16 @@
 #menuhead{
   text-align: right;
   background-color:var(--primary-light);
+}
+#boxQrcode{
+  z-index: 3;
+  position: fixed;
+  top: 4px;
+  left: 4px;
+  width: 98vw;
+  height: 98vh;
+  visibility: hidden;
+  background-color: var(--primary-light);
 }
 li{
   padding: 16px;
@@ -55,6 +63,7 @@ body {
   }
   button{
     font-size: 16px;
+    
   }
   .navbar{
       display: flex;
@@ -69,13 +78,14 @@ body {
       margin-top: 4pt;
   }
   table {
+    width: 100%;
     border-collapse: collapse;
     background-color: var(--primary-light);
   }
   
   td, th {
     border: 1px solid var(--primary-dark);
-    padding: 0.5rem;
+    padding: 4px;
     text-align: left;
   }
   .output{
@@ -90,4 +100,10 @@ body {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+  }
+  .infoBox{
+    visibility: hidden;
+    background-color: var(--primary-light);
+    padding: 4px;
+    margin-top: 16px;
   }
