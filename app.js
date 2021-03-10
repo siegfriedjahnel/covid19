@@ -22,7 +22,7 @@ async function getDatafromRKI(){
     query = query + "AdmUnitId="+element.AdmUnitId + " OR ";
   })
   query = query.substring(0, query.length-4);//remove the last OR
-  let uri = `https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/rki_key_data_v/FeatureServer/0/query?f=json&where=(${query})&outFields=*`;
+  let uri = `https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/rki_key_data_v/FeatureServer/0/query?f=json&where=(${query})&outFields=*&orderByFields=AdmUnitId%20asc`;
   const response = await fetch(uri);
   const json = await response.json();
   const data = await json.features;
