@@ -1,4 +1,8 @@
 # covid19
+
+![alt text](https://github.com/[siegfriedjahnel]/[covid19]/blob/[main]/screen1.jpg?raw=true)
+
+
 Diese Web-App ist ein personalisiertes Dashbord für Covid19-Zahlen.
 Angezeigt werden:
 - alle Fälle
@@ -12,4 +16,6 @@ Als Orte sind verfügber:
 - alle Bundesländer
 - alle Landkreise
 - alle Kreisstädte
+
+Als Datenquelle dient das RKI, die eine offene REST-API zur Verfügung stellt.
 
