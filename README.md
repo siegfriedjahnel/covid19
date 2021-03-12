@@ -1,6 +1,6 @@
 # covid19
 
-![alt text](https://github.com/[siegfriedjahnel]/[covid19]/blob/[main]/screen1.jpg?raw=true)
+![image of App](https://github.com/[siegfriedjahnel]/[covid19][main]/screen1.png?raw=true)
 
 
 Diese Web-App ist ein personalisiertes Dashbord für Covid19-Zahlen.
