@@ -1,6 +1,6 @@
 # covid19
 
-![image of App](https://github.com/[siegfriedjahnel]/[covid19][main]/screen1.png?raw=true)
+![](https://github.com/siegfriedjahnel/covid19/blob/main/screen1.png)
 
 
 Diese Web-App ist ein personalisiertes Dashbord für Covid19-Zahlen.
@@ -17,5 +17,9 @@ Als Orte sind verfügber:
 - alle Landkreise
 - alle Kreisstädte
 
-Als Datenquelle dient das RKI, die eine offene REST-API zur Verfügung stellt.
+Als Datenquelle dient das RKI, das eine offene REST-API zur Verfügung stellt.
+Die gewählten Orte werden im "local-storage" im Browser gespeichert. 
+Nach einem "clear-cache" sind die gespeicherten Orte wieder gelöscht und müssen ggf. wieder neu gesucht und gespeichert werden
+
+
 
