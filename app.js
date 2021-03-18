@@ -118,7 +118,7 @@ function getCountyByAdmUniId(id) {
 }
 
 function clearLocalStorage(){
-  alert("Alle Date zurücksetzten?");
+  alert("Alle Daten zurücksetzten?");
   localStorage.removeItem('myLocations');
   closeMenu();
   init();
