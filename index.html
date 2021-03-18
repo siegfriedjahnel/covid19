@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cosd19-myDashboard</title>
   <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+  <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
   <link rel="manifest" href="manifest.json">
   <script src="alleOrte.js"></script>
   <script src="libs/qrcode.min.js"></script>
@@ -26,6 +27,9 @@
     <ul>
       <li><button onclick="showQR()"  class= "linkButton">Share by QR</button></li>
       <li><button onclick="sendToWhatsapp()"  class= "linkButton">Share by Whatsapp</button></li>
+      <li><button onclick="clearLocalStorage()" class="linkButton">App zurücksetzen</button></li>
+      <li><button onclick="init()" class="linkButton">App neu laden</button></li>
+      <!-- <li><button onclick="addToHomeScreen()" class="linkButton .ad2hs-prompt">App zum Homescreen hinzufügen</button></li> -->
       <li><button onclick="showAppInfo()" class="linkButton">App Info</button></li>
     </ul>
   </div>

@@ -34,6 +34,8 @@ async function getDatafromRKI(){
 }
 
 function init(){
+  myLocations=[];
+  closeMenu();
   if(localStorage.getItem('myLocations')){
     myLocations = localStorage.getItem('myLocations');
     myLocations = JSON.parse(myLocations);
@@ -45,7 +47,6 @@ function init(){
     }
   }else{
     infoBox.style.visibility = "visible";
-    
   }
   tableBody.innerHTML="";
   getDatafromRKI()
@@ -114,4 +115,11 @@ function getCountyByAdmUniId(id) {
     }
   })
   return name;
+}
+
+function clearLocalStorage(){
+  alert("Alle Date zurücksetzten?");
+  localStorage.removeItem('myLocations');
+  closeMenu();
+  init();
 }
