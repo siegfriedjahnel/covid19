@@ -59,12 +59,14 @@ function init(){
 
 btnAddLocation.addEventListener('click',function(){
   let tf1 = document.getElementById("tf1");
-  if(tf1.value!=''){
-    let AdmUnitId = tf1.value.split("--")[1];
-    let county = tf1.value.split("--")[0];
+  let AdmUnitId = tf1.value.split("--")[1];
+  let county = tf1.value.split("--")[0];
+  if(AdmUnitId){
     addNewLocation(AdmUnitId,county);
-    tf1.value="";
+  }else{
+    alert("Ort ist nicht gelistet");
   }
+  tf1.value="";
 })
 
 function drawTable(data){
