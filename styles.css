@@ -1,12 +1,20 @@
 :root {
   
   --error-color: #B00020;
-
+  
   --primary: #bdbdbd;
   --primary-light:#efefef;
   --primary-dark: #8d8d8d;
   --text: black;
 }
+body {
+  max-width: 35em;
+    background-color: var(--primary);
+    color: var(--text);
+    font-family: sans-serif;
+    padding: 0pt;
+    font-size: 1em;
+  }
 img{
   margin:auto;
 }
@@ -18,7 +26,6 @@ img{
   margin: 4px;
   margin-left: auto;
 }
-
 
 #menu{
   position: fixed;
@@ -47,13 +54,6 @@ img{
 li{
   padding: 16px;
 }
-body {
-    background-color: var(--primary);
-    color: var(--text);
-    font-family: sans-serif;
-    padding: 0pt;
-    font-size: 10pt;
-  }
   .input{
     margin-top: 16px;
     margin-right: 16px;
