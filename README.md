@@ -1,3 +1,5 @@
+# AppInfo
+
 # Mein persönliches covid-19 Dashboard
 
 ![](https://github.com/siegfriedjahnel/covid19/blob/main/screen1.png)
